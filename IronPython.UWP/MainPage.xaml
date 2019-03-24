@@ -1,0 +1,19 @@
+﻿<Page
+    x:Class="IronPython.UWP.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:IronPython.UWP"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <TextBox Name="Script" Margin="10,34,404,47" Text="import System" AcceptsReturn="True" HorizontalAlignment="Stretch"/>
+        <Button Name="Run" Content="Run" HorizontalAlignment="Stretch" Margin="10,0,10,10" VerticalAlignment="Bottom" Click="Run_Click" Height="32"/>
+        <TextBlock HorizontalAlignment="Left" Text="Script:" TextWrapping="Wrap" VerticalAlignment="Top" Height="21" Width="248" Margin="10,10,0,0"/>
+        <TextBlock HorizontalAlignment="Left" Text="Exception:" TextWrapping="Wrap" VerticalAlignment="Top" Height="21" Width="248" Margin="881,10,0,0"/>
+        <TextBox Name="Exception" Margin="881,34,10,47" Text="" HorizontalAlignment="Stretch"/>
+
+    </Grid>
+</Page>

@@ -269,7 +269,9 @@ namespace IronPython.Runtime
             try {
                 Assembly entryAssembly = Assembly.GetEntryAssembly();
                 // Can be null if called from unmanaged code (VS integration scenario)
-                if (entryAssembly != null) {
+                //CoreRT/.NET Native don't provide assembly location
+                //It can be changed in future CoreRT releases
+                if (!PlatformAdaptationLayer.IsNativeModule && entryAssembly != null) {
                     string entry = Path.GetDirectoryName(entryAssembly.Location);
                     string lib = Path.Combine(entry, "Lib");
                     if(Directory.Exists(lib)) {
@@ -1982,7 +1984,7 @@ namespace IronPython.Runtime
         private static string GetInitialPrefix() {
 #if FEATURE_ASSEMBLY_CODEBASE
             try {
-                return typeof(PythonContext).Assembly.CodeBase;
+                return PlatformAdaptationLayer.IsNativeModule ? string.Empty : typeof(PythonContext).Assembly.CodeBase;
             } catch (SecurityException) {
                 // we don't have permissions to get paths...
                 return String.Empty;

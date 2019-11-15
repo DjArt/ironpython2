@@ -18,6 +18,10 @@ using System.Threading.Tasks;
 using Microsoft.Scripting.Hosting;
 using Windows.UI.Popups;
 using System.Collections;
+using System.Runtime.CompilerServices;
+using System.Reflection;
+using System.Collections.ObjectModel;
+using System.Linq.Expressions;
 
 // Документацию по шаблону элемента "Пустая страница" см. по адресу https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x419
 
@@ -34,6 +38,7 @@ namespace IronPython.UWP
         {
             InitializeComponent();
             python.SetSearchPaths(new[] { "Lib" });
+            
         }
 
         private async void Run_Click(object sender, RoutedEventArgs e)
@@ -50,6 +55,10 @@ namespace IronPython.UWP
             {
                 Exception.Text = ex.Message;
             }
+        }
+
+        private KeyValuePair<IEnumerator, IDisposable> TTT(CallSite a0, object a1) {
+            return default;
         }
     }
 }

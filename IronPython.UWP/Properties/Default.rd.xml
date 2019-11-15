@@ -18,6 +18,8 @@
 <Directives xmlns="http://schemas.microsoft.com/netfx/2013/01/metadata">
     <Application>
         <Assembly Name="*Application*" Dynamic="Required All"/>
+        <TypeInstantiation Name="System.Func" Arguments="System.Object[], System.Object" Dynamic="Required All" />
         <TypeInstantiation Name="System.Func" Arguments="System.Runtime.CompilerServices.CallSite, System.Object, System.Collections.Generic.KeyValuePair{System.Collections.IEnumerator, System.IDisposable}" Dynamic="Required All" />
+        <TypeInstantiation Name="System.Runtime.CompilerServices.CallSite" Arguments="System.Func{System.Runtime.CompilerServices.CallSite, System.Object, System.Collections.Generic.KeyValuePair{System.Collections.IEnumerator, System.IDisposable}}" Dynamic="Required All" />
     </Application>
 </Directives>
